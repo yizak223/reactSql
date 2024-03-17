@@ -25,21 +25,18 @@ function App() {
       page: page,
     })
     setProducts(response.data)
-    console.log(response.data)
   }
 
   const handleChange = (e) => {
     const newData = { ...newProduct }
     newData[e.target.name] = e.target.value
     setNewProduct(newData)
-    console.log(newData)
   }
 
   const handleChangeEdit = (e) => {
     const editData = {...editProduct }
     editData[e.target.name] = e.target.value
     setEditProduct(editData)
-    console.log(editData)
   }
 
   const handleEdit = async (e) => {
@@ -62,12 +59,11 @@ function App() {
       ProductName: '',
       UnitPrice: ""
     })
-    console.log(response.data)
+    fetchData()
   }
 
   useEffect(() => {
     fetchData(pageNumber)
-    console.log(products);
   }, [pageNumber])
 
   const handlePageChange = (event) => {
